@@ -17,6 +17,10 @@ export default Vue.extend({
 <style lang="scss">
 @import './styles/reset.scss';
 
+html {
+  font-size: 16px;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -24,20 +28,5 @@ export default Vue.extend({
   text-align: center;
   color: #2c3e50;
 }
-.title {
-  margin: 0 auto;
-  max-width: 50%;
-  text-align: left;
-  margin-bottom: 30px;
-  margin-top: 30px;
-  color: green;
-  font-size: 25px;
-  font-weight: 600;
-}
-.text-wrapper{
-  margin: 0 auto;
-  max-width: 50%;
-  text-align: left;
-  font-size: 16px;
-}
+
 </style>

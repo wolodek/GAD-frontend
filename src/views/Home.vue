@@ -3,16 +3,16 @@
     <div class="hero-wrapper">
       <img class="baner" src="../assets/baner.png" alt="">
     </div>
-    <ArticleComponent title="'hackaton'" date="'30.02'" text="'lorem ipsum" />
+    <ArticleList />
   </div>
 </template>
 
 <script>
-import ArticleComponent from '../components/ArticleComponent.vue';
+import ArticleList from '../components/ArticleList.vue';
 
 export default {
   components: {
-    ArticleComponent,
+    ArticleList,
   },
   name: 'Home',
   mounted() {

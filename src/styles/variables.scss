@@ -1,0 +1,54 @@
+$green-1: #61BA5D;
+$green-2: #2FAB64;
+$black: #1F1F1F;
+$dark-grey: #0A2E37;
+$font-16: 1rem;
+$font-18: 1.125rem;
+$font-20: 1.25rem;
+$font-24: 1.5rem;
+$font-28: 1.75rem;
+$font-32: 2rem;
+$font-36: 2.25rem;
+
+@mixin headline {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: $font-36;
+}
+
+@mixin date {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: $font-28;
+}
+
+@mixin menu {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: $font-18;
+}
+
+@mixin subheader {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: $font-32;
+}
+
+@mixin title {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: $font-24;
+}
+
+@mixin body {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: $font-20;
+    line-height: 30px;
+}
+
+@mixin sidebar {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: $font-18;
+}
