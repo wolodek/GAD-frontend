@@ -14,9 +14,19 @@ const routes: RouteConfig[] = [
     component: loadView('Home'),
   },
   {
+    path: '/news',
+    name: 'news',
+    component: loadView('News'),
+  },
+  {
     path: '/about',
     name: 'about',
     component: loadView('About'),
+  },
+  {
+    path: '/faq',
+    name: 'faq',
+    component: loadView('Faq'),
   },
 ];
 const options: RouterOptions = {

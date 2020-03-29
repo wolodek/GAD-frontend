@@ -1,6 +1,8 @@
 <template>
   <div id="navbar-wrapper" class="flex-row">
-    <img alt="Gad logo" src="../assets/gad-logo.png" />
+    <a href="/">
+      <img alt="Gad logo" src="../assets/gad-logo.png" />
+    </a>
     <div id="menu-wrapper" class="flex-row">
       <div id="menu-options-wrapper" class="flex-row">
         <router-link
@@ -12,9 +14,9 @@
       </div>
       <div id="icons-search-wrapper" class="flex-row">
         <div id="icons-wrapper">
-          <img class="icon" src="../assets/gad-logo.png" alt />
-          <img class="icon" src="../assets/gad-logo.png" alt />
-          <img class="icon" src="../assets/gad-logo.png" alt />
+          <SocialIcon :link="''" :icon="'youtube'" />
+          <SocialIcon :link="''" :icon="'facebook-f'"  />
+          <SocialIcon :link="''" :icon="'instagram'"  />
         </div>
         <div class="search-box">
           <input type="text" placeholder="type to search" />
@@ -27,15 +29,10 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue';
+<script>
+import SocialIcon from './SocialIcon.vue';
 
-interface MenuOption {
-  label: string;
-  link: string;
-}
-
-export default Vue.extend({
+export default {
   name: 'Navbar',
   data() {
     return {
@@ -46,11 +43,11 @@ export default Vue.extend({
         },
         {
           label: 'Aktualności',
-          link: 'about',
+          link: 'news',
         },
         {
           label: 'O nas',
-          link: 'aboutus',
+          link: 'about',
         },
         {
           label: 'FAQ',
@@ -59,7 +56,10 @@ export default Vue.extend({
       ],
     };
   },
-});
+  components: {
+    SocialIcon,
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -82,7 +82,6 @@ export default Vue.extend({
   }
   #menu-wrapper {
     #menu-options-wrapper {
-      margin-right: 7px;
       a {
         text-decoration: none;
         font-weight: bold;
@@ -99,11 +98,13 @@ export default Vue.extend({
       position: relative;
       #icons-wrapper {
         margin-right: 40px;
-        .icon {
-          width: auto;
-          height: 30px;
-          margin-right: 23px;
-        }
+        display: flex;
+        flex-direction: row;
+        // .icon {
+        //   width: auto;
+        //   height: 30px;
+        //   margin-right: 23px;
+        // }
       }
       #input {
         width: 10px;
@@ -112,6 +113,7 @@ export default Vue.extend({
       }
     }
     .search-box {
+      z-index: 10;
       position: absolute;
       right: 0px;
       display: flex;
@@ -122,7 +124,7 @@ export default Vue.extend({
       &:focus-within {
         input {
           border-left: 1px solid grey;
-          width: 200px;
+          width: 170px;
           padding: 0 6px;
           color: #0e1010;
         }

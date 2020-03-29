@@ -1,5 +1,6 @@
 <template>
   <div id='list-wrapper'>
+    <BasicFilters v-if="viewType === 'news'"/>
     <ArticleListItem v-for="(item) in articles"
     :key="item.id"
     :date='item.date'
@@ -10,10 +11,15 @@
 
 <script>
 import ArticleListItem from './ArticleListItem.vue';
+import BasicFilters from './BasicFilters.vue';
 
 export default {
   components: {
     ArticleListItem,
+    BasicFilters,
+  },
+  props: {
+    viewType: String,
   },
   data() {
     return {
@@ -41,7 +47,6 @@ export default {
                + 'just gravy.  Have a nice day.',
         },
       ],
-
     };
   },
 };

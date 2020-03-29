@@ -3,7 +3,7 @@
     <div class="hero-wrapper">
       <img class="baner" src="../assets/baner.png" alt="">
     </div>
-    <ArticleList />
+    <ArticleList viewType="homePage"/>
   </div>
 </template>
 

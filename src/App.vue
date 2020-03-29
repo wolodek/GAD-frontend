@@ -1,16 +1,18 @@
 <template>
   <div id="app">
     <Navbar />
-    <router-view />
+    <router-view id='page' />
+    <Footer />
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 import Navbar from './components/Navbar.vue';
+import Footer from './components/Footer.vue';
 
 export default Vue.extend({
-  components: { Navbar },
+  components: { Navbar, Footer },
 });
 </script>
 
@@ -27,6 +29,9 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  #page {
+    min-height: 100vh;
+  }
 }
 
 </style>

@@ -1,30 +1,26 @@
 <template>
     <div class="article-list-item-wrapper">
-        <div class="date-column">
+        <div class="date-column" v-if="date">
             {{date}}
         </div>
-        <div class="text-column">
-            <p class="article-title">
-                {{title}}
-            </p>
-            <p class="article-body">
-                {{text}}
-            </p>
-        </div>
+        <ArticleListItemText :title='title' :text='text' />
     </div>
 </template>
 
 <script>
-import Vue from 'vue';
+import ArticleListItemText from './ArticleListItemText.vue';
 
-export default Vue.extend({
+export default {
   name: 'ArticleListItem',
   props: {
     date: String,
     title: String,
     text: String,
   },
-});
+  components: {
+    ArticleListItemText,
+  },
+};
 </script>
 
 <style lang='scss'>
@@ -39,18 +35,6 @@ export default Vue.extend({
         @include headline;
         flex:1;
         color: $green-1;
-    }
-    .text-column {
-        text-align: left;
-        flex: 2;
-        .article-title {
-            color: $green-1;
-            margin-bottom: 1rem;
-            @include subheader;
-        };
-        .article-body {
-            @include body;
-        }
     }
 }
 </style>
